@@ -86,6 +86,7 @@ C CALCULATE THE PARAMETERS OF THE CONFORMAL TRANSFORMATION              AAFU0068
       G=R(4)/RMAS                                                       AAFU0077
       A=1./(1.+G)                                                       AAFU0078
       X=ET/RMAS                                                         AAFU0079
+
 C                                                                       AAFU0080
 C TRANSFORM THE Q'S CONFORMALLY INTO THE P'S                            AAFU0081
       DO 207 I=1,N                                                      AAFU0082
@@ -93,6 +94,7 @@ C TRANSFORM THE Q'S CONFORMALLY INTO THE P'S                            AAFU0081
       DO 206 K=1,3                                                      AAFU0084
   206 P(K,I)=X*(Q(K,I)+B(K)*(Q(4,I)+A*BQ))                              AAFU0085
   207 P(4,I)=X*(G*Q(4,I)+BQ)                                            AAFU0086
+
 C                                                                       AAFU0087
 C RETURN FOR UNWEIGHTED MASSLESS MOMENTA                                AAFU0088
       WT=1.D0                                                           AAFU0089

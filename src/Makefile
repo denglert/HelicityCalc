@@ -3,11 +3,11 @@ FC     = ifort
 FCFLAGS = -c
 FLFLAGS =
 CC     = g++
-OBJ = ../lib/rh_tautau.o ../lib/main.o
+OBJ = ../lib/rh_tautau.o ../lib/main.o ../lib/rambo.o ../lib/ranmar.o
 
 #########################
 
-../bin/main : ../lib/main.o ../lib/rh_tautau.o
+../bin/main : $(OBJ)
 	$(FC) $(FLFLAGS) -o $@ $(OBJ)
 
 ../bin/main_test : ../lib/main_test.o ../lib/rh_tautau.o
@@ -23,4 +23,7 @@ OBJ = ../lib/rh_tautau.o ../lib/main.o
 	$(FC) $(FCFLAGS) $< -o $@ 
 
 ../lib/rambo.o : rambo.f
+	$(FC) $(FCFLAGS) $< -o $@ 
+
+../lib/ranmar.o : ranmar.f
 	$(FC) $(FCFLAGS) $< -o $@ 
